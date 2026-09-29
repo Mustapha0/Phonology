@@ -1,29 +1,8 @@
 # Phonemica
 
-Interactive phonology course: lessons, vowel space, rule derivations, and Optimality Theory tableaux.
-Works fully offline. No API key needed.
+An interactive phonology app for students and linguists. It works fully offline.
 
-## Get the APK
-
-1. Create a new GitHub repository.
-2. Upload these files to the repo root (see below for phone tips).
-3. Open the **Actions** tab. The "Build Android APK" workflow starts by itself (about 5–8 minutes).
-4. When it finishes, open the repo's **Releases** page and download `Phonemica.apk`.
-   (It is also under the run's Artifacts as a zip.)
-5. Install it on your phone. Android will ask you to allow installs from your browser or file manager.
-
-## Uploading from a phone
-
-GitHub's web upload can't take folders or zip files, so:
-
-1. Unzip this project on your phone.
-2. On the repo page: Add file → Upload files → select all the files in the top level (not folders), then Commit.
-3. Add file → Create new file. In the name box type `.github/workflows/build-apk.yml`
-   (typing the slashes creates the folders), paste in the contents of `build-apk.yml`, then Commit.
-
-On a computer you can simply drag the whole folder contents into the upload page.
-
-## Run locally
-
-    npm install
-    npm run dev
+- **Course:** 30 lessons in 5 units, each with examples and quiz questions. The units cover fundamentals, phonological rules and processes, syllable structure, suprasegmentals and prosody, and the major theoretical frameworks.
+- **Vowels:** an interactive vocal tract and vowel chart that show how tongue and lip position change a vowel and its features.
+- **Derive:** a rule engine that runs underlying forms through ordered phonological rules, with a sandbox for writing your own.
+- **OT:** Optimality Theory tableaux where you re-rank the constraints and watch the winning output change.
