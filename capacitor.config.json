@@ -1,0 +1,8 @@
+{
+  "appId": "com.phonemica.app",
+  "appName": "Phonemica",
+  "webDir": "dist",
+  "android": {
+    "backgroundColor": "#0F172A"
+  }
+}
