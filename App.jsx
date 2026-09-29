@@ -377,7 +377,9 @@ Try it: the Derive tab labels each step as fed or bled automatically, and lets y
     ]
   },
 
-  /* ------------------------------ UNIT 3 ---------------------------------- */
+  /* -------------------------------------------------------------------------- */
+  /* UNIT 3: SYLLABLE STRUCTURE & PHONOTACTICS                                  */
+  /* -------------------------------------------------------------------------- */
   {
     id: "unit-3",
     title: "3. Syllable Structure & Phonotactics",
@@ -386,278 +388,561 @@ Try it: the Derive tab labels each step as fed or bled automatically, and lets y
         id: "3-1",
         title: "The Structure of the Syllable (Onset, Rhyme, Nucleus, Coda)",
         content: `
-A syllable (represented by the Greek letter $\\sigma$) is a unit of organization for sounds. It is hierarchical, not a flat string:
+A syllable (represented by the Greek letter $\\sigma$) is organized hierarchically rather than as a flat sequence of phonemes:
 
-$$\\sigma \\rightarrow \\text{Onset} + \\text{Rhyme}$$
+$$\\sigma \\rightarrow \\text{Onset } (O) + \\text{Rhyme } (R)$$
+$$\\text{Rhyme } (R) \\rightarrow \\text{Nucleus } (N) + \\text{Coda } (C)$$
 
-$$\\text{Rhyme} \\rightarrow \\text{Nucleus} + \\text{Coda}$$
-
-* **Onset:** consonants before the vowel (optional in many languages).
-* **Nucleus:** the peak of the syllable, usually a vowel (required).
-* **Coda:** consonants after the nucleus (optional).
-* **Rhyme:** nucleus + coda. This is the unit that rhymes and that determines syllable weight.
-
-A syllable with a short vowel and no coda is **light** (CV). One with a long vowel or a coda is typically **heavy** (CVV, CVC). Many stress systems care about weight.
+* **Onset:** Consonant(s) preceding the nucleus. Optional in many languages.
+* **Rhyme:** The core structural constituent containing the Nucleus and Coda.
+* **Nucleus:** The central vocalic or syllabic sonorant element. It is the only obligatory constituent of a syllable.
+* **Coda:** Consonant(s) following the nucleus within the same syllable.
         `,
         examples: [
-          { label: "'cat' /kæt/", detail: "Onset: k\nNucleus: æ\nCoda: t\nRhyme: æt" },
-          { label: "'strengths' /strɛŋkθs/", detail: "Onset: str\nNucleus: ɛ\nCoda: ŋkθs\nEnglish allows up to three consonants in the onset and four in the coda." },
-          { label: "Syllabic consonant nucleus", detail: "'bottle' [ˈbɒɾl̩]: the final syllable has no vowel; the lateral [l̩] is the nucleus." }
+          {
+            label: "Monosyllabic Word 'cats' /kæts/",
+            detail: "• Onset = [k]\n• Rhyme = [æts]\n  - Nucleus = [æ]\n  - Coda = [ts]"
+          },
+          {
+            label: "Monosyllabic Word 'strum' /strʌm/",
+            detail: "• Onset = [str] (Complex Onset)\n• Rhyme = [ʌm]\n  - Nucleus = [ʌ]\n  - Coda = [m]"
+          },
+          {
+            label: "Syllabic Consonants as Nuclei",
+            detail: "• 'button' /ˈbʌt.n̩/ → Syllable 2 Nucleus = [n̩] (No vocalic segment required)."
+          }
         ],
         exercises: [
           {
-            question: "In 'plant' /plænt/, which part is the rhyme?",
-            options: ["/pl/", "/æ/", "/ænt/", "/nt/"],
-            answer: 2,
-            explanation: "The rhyme is the nucleus plus the coda: /æ/ + /nt/ = /ænt/. The onset is /pl/."
+            question: "In the syllable 'plant' [plænt], what constituents form the Rhyme?",
+            options: [
+              "The cluster [pl]",
+              "The vowel and nasal-stop cluster [ænt]",
+              "Only the vowel nucleus [æ]",
+              "The coda cluster [nt]"
+            ],
+            answer: 1,
+            explanation: "The Rhyme consists of the Nucleus [æ] plus the Coda [nt]."
           }
         ]
       },
       {
         id: "3-2",
-        title: "The Sonority Sequencing Principle",
+        title: "Phonotactic Constraints and Permissible Clusters",
         content: `
-Sounds differ in **sonority**, roughly how vowel-like (open, resonant) they are. A commonly used scale:
+**Phonotactic constraints** are language-specific structural rules that define permissible sequences of phonemes within onsets, codas, and word boundaries.
 
-$$\\text{stops}(1) < \\text{fricatives}(2) < \\text{nasals}(3) < \\text{liquids}(4) < \\text{glides}(5) < \\text{vowels}(6)$$
-
-The **Sonority Sequencing Principle (SSP)** says a syllable rises in sonority from the onset edge up to the nucleus, then falls toward the coda edge. The nucleus is the sonority peak.
-
-English has well-known exceptions: /s/ + stop clusters such as /st/, /sp/, /sk/ at word edges break the principle.
+* **Onset Constraints:** Specify maximum length and valid consonant pairings word-initially.
+* **Coda Constraints:** Dictate allowed post-vocalic segments.
+* **Accidental vs. Systematic Gaps:**
+  * *Systematic Gap:* Ungrammatical due to constraint violations (e.g., English */bnɪk/).
+  * *Accidental Gap:* Phonotactically permissible but not used in the lexicon (e.g., English /blɪk/ 'blick').
         `,
         examples: [
-          { label: "Good onsets (rising)", detail: "/pl/ 'play' (stop → liquid)\n/tr/ 'tree' (stop → liquid)\n/kw/ 'quick' (stop → glide)" },
-          { label: "Good codas (falling)", detail: "/ɛlp/ 'help' (liquid → stop)\n/ɒnd/ 'pond' (nasal → stop)" },
-          { label: "SSP violation: /s/ + stop", detail: "/stɒp/ 'stop': /s/ (fricative, 2) is more sonorous than /t/ (stop, 1), yet /st/ is a licit English onset." }
+          {
+            label: "English Initial Onset Template (#CCC)",
+            detail: "Initial 3-consonant clusters MUST follow the pattern:\n/s/ + Voiceless Stop (/p, t, k/) + Liquid/Glide (/l, r, w, j/)\nExamples: /sprɪŋ/ 'spring', /splæt/ 'splat', /skwɒʃ/ 'squash'."
+          },
+          {
+            label: "Cross-Linguistic Contrast (Japanese vs. Georgian)",
+            detail: "• Japanese: Restricts codas to the moraic nasal /N/ or the first half of a geminate, giving (C)V, (C)VN, and (C)VQ syllables.\n• Georgian: Allows very long initial clusters of six or more consonants (e.g., vprckvni 'I am peeling it', in Georgian romanization)."
+          }
         ],
         exercises: [
           {
-            question: "Which onset violates the Sonority Sequencing Principle (ignoring /s/-clusters)?",
-            options: ["/bl/", "/tr/", "/lp/", "/kw/"],
-            answer: 2,
-            explanation: "In /lp/ sonority falls from a liquid to a stop, the opposite of the rise the SSP requires in an onset."
+            question: "Why is /bnɪk/ illegal as an English word (*bnick), whereas /blɪk/ ('blick') is acceptable as a non-word?",
+            options: [
+              "/bn/ violates English initial onset phonotactics (systematic gap), while /bl/ is permissible (accidental gap).",
+              "Both are systematic gaps prohibited across all human languages.",
+              "/bl/ violates the Sonority Hierarchy.",
+              "/bn/ is prohibited because /n/ can never appear in an onset."
+            ],
+            answer: 0,
+            explanation: "/bn/ violates English-specific onset constraints (systematic gap), whereas /bl/ adheres to English phonotactics and forms a valid possible word (accidental gap). Note that /bn/ is fine in some other languages, and /n/ does appear in English onsets (e.g., 'no')."
           }
         ]
       },
       {
         id: "3-3",
-        title: "Phonotactics: Possible and Impossible Words",
+        title: "Sonority Hierarchy and Sonority Sequencing Principle (SSP)",
         content: `
-**Phonotactics** are the language-specific rules about which sound sequences are allowed. Speakers know them without being taught.
+The **Sonority Hierarchy** ranks speech segments along an intrinsic loudness scale relative to neighboring sounds produced with equal length and effort:
 
-There are two kinds of non-words. An **accidental gap** is a possible word that simply does not exist (blick). A **systematic gap** breaks phonotactic rules (bnick, in English).
+$$\\text{Stops (1)} < \\text{Fricatives (2)} < \\text{Nasals (3)} < \\text{Liquids (4)} < \\text{Glides (5)} < \\text{Vowels (6)}$$
 
-Phonotactics also explain how loanwords are adapted: speakers repair illicit sequences, often by epenthesis or deletion.
+The **Sonority Sequencing Principle (SSP)** requires that:
+1. Sonority must **rise** from the edge of the syllable up to the nucleus (the sonority peak).
+2. Sonority must **fall** from the nucleus to the end of the syllable.
         `,
         examples: [
-          { label: "English accidental vs. systematic gaps", detail: "[blɪk] – possible, just not a word\n[bnɪk] – impossible: /bn/ is not an English onset\n[ŋaɪt] – impossible: /ŋ/ never begins an English word" },
-          { label: "Japanese loanword adaptation", detail: "English 'strike' /straɪk/ → Japanese [sutoraiku]. Japanese syllables are mostly (C)V, so vowels are inserted into the cluster." },
-          { label: "Spanish loanword adaptation", detail: "English 'stress' /strɛs/ → Spanish [es.tɾes]. Word-initial /s/ + consonant is repaired by prothesis." }
+          {
+            label: "Conforming Syllable 'tramp' /træmp/",
+            detail: "Sonority profile:\n• Onset [t] (Stop = 1) → [r] (Liquid = 4) [RISING]\n• Nucleus [æ] (Vowel = 6) [PEAK]\n• Coda [m] (Nasal = 3) → [p] (Stop = 1) [FALLING]\nResult: Fully satisfies the SSP."
+          },
+          {
+            label: "SSP Exception (English Adjunct /s/)",
+            detail: "In 'spit' /spɪt/:\n• /s/ (Fricative = 2) precedes /p/ (Stop = 1).\n• This creates a sonority reversal at the onset boundary. /s/ is often analyzed as an extrasyllabic adjunct."
+          }
         ],
         exercises: [
           {
-            question: "Which of these is a phonotactically possible (but nonexistent) English word?",
-            options: ["[ŋaɪt]", "[bnɪk]", "[blɪk]", "[tlɛp]"],
-            answer: 2,
-            explanation: "/bl/ is a legal English onset, so [blɪk] is an accidental gap. The others begin with sequences English does not allow."
+            question: "Which of the following hypothetical onset clusters violates the Sonority Sequencing Principle (SSP)?",
+            options: [
+              "/pr/ (Stop → Liquid)",
+              "/rt/ (Liquid → Stop)",
+              "/kw/ (Stop → Glide)",
+              "/sn/ (Fricative → Nasal)"
+            ],
+            answer: 1,
+            explanation: "In /rt/, sonority drops from Liquid (4) to Stop (1) within the onset, violating the required rising sonority profile."
           }
         ]
       },
       {
         id: "3-4",
-        title: "Syllabification and the Maximal Onset Principle",
+        title: "Syllabification Rules and Maximal Onset Principle",
         content: `
-When consonants sit between vowels, where does the syllable boundary go? The **Maximal Onset Principle (MOP)** says: give the second syllable as many consonants as the language allows in a word-initial onset. Any leftovers go to the coda of the first syllable.
+When parsing continuous segment sequences into syllables, languages apply the **Maximal Onset Principle (MOP)**:
 
-Steps:
-* Find the vowels (nuclei).
-* Take the consonant string between two nuclei.
-* Give the second syllable the longest legal onset from that string.
-* Put the rest in the previous coda.
+> Assign intervocalic consonants to the **Onset** of the following syllable as long as the resulting cluster forms a phonotactically valid onset in that language.
+
+Stepwise Syllabification Algorithm:
+1. Identify and build **Nuclei** (Vowels/Syllabic consonants).
+2. Maximize **Onsets** preceding nuclei according to language phonotactics.
+3. Attach remaining unassigned post-vocalic consonants to preceding **Codas**.
         `,
         examples: [
-          { label: "'apron' /eɪprən/", detail: "Between vowels: /pr/. /pr/ is a legal English onset, so it all goes right: eɪ.prən." },
-          { label: "'ignite' /ɪɡnaɪt/", detail: "Between vowels: /ɡn/. /ɡn/ is not a legal English onset, so /ɡ/ closes the first syllable: ɪɡ.naɪt." },
-          { label: "'pilgrim' /pɪlɡrɪm/", detail: "Between vowels: /lɡr/. /ɡr/ is a legal onset, /lɡr/ is not: pɪl.ɡrɪm." }
+          {
+            label: "Syllabification of 'apron' /ˈeɪprən/",
+            detail: "• Intervocalic sequence = /pr/\n• /pr/ is a valid English onset cluster.\n• MOP syllabifies as [ˈeɪ.prən] rather than [ˈeɪp.rən]."
+          },
+          {
+            label: "Syllabification of 'handbook' /ˈhændbʊk/",
+            detail: "• Intervocalic sequence = /ndb/\n• /ndb/ is not a valid onset cluster.\n• The longest valid onset for syllable 2 is /b/.\n• Result: [ˈhænd.bʊk]."
+          }
         ],
         exercises: [
           {
-            question: "How does the Maximal Onset Principle syllabify 'monster' /mɒnstɚ/?",
-            options: ["mɒnst.ɚ", "mɒn.stɚ", "mɒ.nstɚ", "m.ɒnstɚ"],
-            answer: 1,
-            explanation: "/nst/ is not a legal onset but /st/ is, so /st/ goes to the second syllable and /n/ stays in the first coda: mɒn.stɚ."
+            question: "How does the Maximal Onset Principle syllabify the word 'construct' /kənˈstrʌkt/ in standard English?",
+            options: [
+              "[kən.ˈstrʌkt]",
+              "[kəns.ˈtrʌkt]",
+              "[kənst.ˈrʌkt]",
+              "[kənst.rʌk.t]"
+            ],
+            answer: 0,
+            explanation: "/str/ is a fully permissible initial onset cluster in English, so MOP assigns all three consonants to the onset of the second syllable."
+          }
+        ]
+      },
+      {
+        id: "3-5",
+        title: "Heavy vs. Light Syllables (Moraic Theory)",
+        content: `
+**Moraic Theory** quantifies phonological weight using abstract units of time called **moras ($\\mu$)**:
+
+* **Light Syllable ($1\\mu$ / Monomoraic):** Contains a short vowel nucleus with no coda (CV).
+* **Heavy Syllable ($2\\mu$ / Bimoraic):** Contains either a long vowel/diphthong nucleus (CVV) OR a short vowel with a coda consonant (CVC, in languages where codas contribute weight).
+* **Superheavy Syllable ($3\\mu$ / Trimoraic):** Features a long vowel with a coda (CVVC) and, in some languages, a short vowel with a complex coda (CVCC).
+        `,
+        examples: [
+          {
+            label: "Light vs. Heavy Syllable Structure",
+            detail: "• Light (1μ): First syllable of 'ago' [ə.ˈɡoʊ] → [ə] is 1μ.\n• Heavy (2μ): 'cat' [kæt] → Nucleus [æ] (1μ) + Coda [t] (1μ) = 2μ.\n• Heavy (2μ): 'sea' [siː] → Long vowel [iː] (2μ)."
+          },
+          {
+            label: "Stress Dependence on Syllable Weight",
+            detail: "In Latin, stress falls on the penult if it is heavy (2μ), e.g., /a.ˈmaː.tus/ 'loved', but shifts to the antepenult if the penult is light (1μ), e.g., /ˈdo.mi.nus/ 'master'."
+          }
+        ],
+        exercises: [
+          {
+            question: "Under standard moraic theory, how many moras (μ) are assigned to a syllable containing a long vowel and a coda consonant (CVVC)?",
+            options: [
+              "1 mora",
+              "2 moras",
+              "3 moras (Superheavy)",
+              "0 moras"
+            ],
+            answer: 2,
+            explanation: "A long vowel accounts for 2μ and the coda consonant contributes 1μ, totaling 3μ (Superheavy)."
           }
         ]
       }
     ]
   },
 
-  /* ------------------------------ UNIT 4 ---------------------------------- */
+  /* -------------------------------------------------------------------------- */
+  /* UNIT 4: SUPRASEGMENTAL & PROSODIC PHONOLOGY                                */
+  /* -------------------------------------------------------------------------- */
   {
     id: "unit-4",
-    title: "4. Suprasegmentals & Autosegmental Phonology",
+    title: "4. Suprasegmental & Prosodic Phonology",
     lessons: [
       {
         id: "4-1",
-        title: "Stress and Metrical Structure",
+        title: "Stress Assignment and Stress Rules",
         content: `
-**Stress** is relative prominence of one syllable over its neighbors, cued by some mix of pitch, duration, and loudness. Metrical phonology groups syllables into **feet**, each with one strong (S) and one weak (W) position.
+Stress is the relative acoustic prominence of a syllable within a word or phrase, achieved through a combination of increased fundamental frequency (pitch), intensity (loudness), and duration.
 
-* **Trochee:** S W (stress on the first syllable).
-* **Iamb:** W S (stress on the second syllable).
-
-A **metrical grid** stacks marks above syllables: the more marks over a syllable, the more prominent it is. The tallest column carries primary stress.
+* **Primary Stress (ˈ):** The most prominent syllable in a phonological word.
+* **Secondary Stress (ˌ):** Prominent syllables that do not carry the main pitch movement.
+* **Unstressed:** Syllables with reduced energy and frequently reduced vowels ([ə], [ɪ], [ʊ], [n̩]).
         `,
         examples: [
-          { label: "Trochaic pattern", detail: "'water' [ˈwɔː.tɚ]: S W\n'table' [ˈteɪ.bl̩]: S W" },
-          { label: "Iambic pattern", detail: "'be.lieve' [bɪ.ˈliːv]: W S\n'a.rise' [ə.ˈɹaɪz]: W S" },
-          { label: "Stress shifts vowel quality", detail: "'photograph' [ˈfoʊ.ɾə.ɡɹæf] vs. 'photography' [fə.ˈtɒɡ.ɹə.fi]. Unstressed vowels reduce toward schwa." }
+          {
+            label: "English Nominal vs. Verbal Stress Alternation",
+            detail: "• Noun: /ˈɪm.pɔːt/ 'import' (initial stress)\n• Verb: /ɪm.ˈpɔːt/ 'import' (final stress)\n• Noun: /ˈrɛ.kɔːd/ 'record' vs. Verb: /rɪ.ˈkɔːd/ 'record'"
+          },
+          {
+            label: "Derivational Stress Shifts",
+            detail: "• /ˈfəʊ.tə.ɡrɑːf/ ('photograph')\n• /fə.ˈtɒ.ɡrə.fə/ ('photographer')\n• /ˌfəʊ.tə.ˈɡræ.fɪk/ ('photographic')"
+          }
         ],
         exercises: [
           {
-            question: "In an iambic foot, which syllable carries the stress?",
-            options: ["The first", "The second", "Both equally", "Neither"],
-            answer: 1,
-            explanation: "An iamb is weak-strong (W S), so the second syllable is stressed."
+            question: "In English, what stress pattern typically distinguishes compound nouns (e.g., 'blackbird') from adjective-noun phrases (e.g., 'black bird')?",
+            options: [
+              "Compound nouns take primary stress on the left element (/ˈblæk.bɜːd/); phrases take primary stress on the right (/ˌblæk ˈbɜːd/).",
+              "Compound nouns take primary stress on the right element; phrases take primary stress on the left.",
+              "Both take equal stress on both words.",
+              "Phrases always reduce the vowel of the second word to a schwa."
+            ],
+            answer: 0,
+            explanation: "The Compound Stress Rule places primary stress on the left member of a compound noun, whereas phrasal stress defaults to the rightmost word."
           }
         ]
       },
       {
         id: "4-2",
-        title: "Tone and Tone Sandhi",
+        title: "Pitch Accent Systems",
         content: `
-In a **tone language**, pitch distinguishes word meaning, just as consonants and vowels do. Tones may be **level** (high, mid, low) or **contour** (rising, falling).
-
-**Tone sandhi** is a phonological process where a tone changes depending on neighboring tones, similar to segmental assimilation.
+A **pitch accent system** utilizes distinctive pitch movements constrained to specific accentable syllables to distinguish lexical meaning. Unlike tone languages, not every syllable carries an independent tone specification; typically, a word has at most one accent location (a pitch drop or rise).
         `,
         examples: [
-          { label: "Mandarin tones on /ma/", detail: "mā (tone 1, high level) 'mother'\nmá (tone 2, rising) 'hemp'\nmǎ (tone 3, dipping) 'horse'\nmà (tone 4, falling) 'scold'" },
-          { label: "Mandarin third-tone sandhi", detail: "Two third tones in a row: the first becomes a rising tone. nǐ + hǎo 'hello' is pronounced ní hǎo." }
+          {
+            label: "Standard Japanese Pitch Accent (hashi)",
+            detail: "• /haʃi/ 'chopsticks': [háʃì] (High-Low; accent on the 1st mora)\n• /haʃi/ 'bridge': [haʃí] alone, but pitch drops on a following particle: [haʃí ɡà] (accent on the 2nd mora)\n• /haʃi/ 'edge': [haʃí] alone, and pitch stays high on the particle: [haʃí ɡá] (unaccented)\n('bridge' and 'edge' sound identical in isolation and differ only when a particle follows.)"
+          },
+          {
+            label: "Swedish Pitch Accent (Accent 1 vs. Accent 2)",
+            detail: "• Accent 1 (acute): /ˈan.den/ 'the duck'\n• Accent 2 (grave): /ˈan.den/ 'the spirit'\nThe two words differ only in their pitch contour."
+          }
         ],
         exercises: [
           {
-            question: "Mandarin má 'hemp' and mǎ 'horse' differ only in tone. What does this make them?",
+            question: "What is the primary difference between a pitch accent language (like Japanese) and a fully tonal language (like Mandarin)?",
             options: [
-              "Allophones of one word",
-              "A minimal pair distinguished by tone",
-              "Free variants",
-              "Complementary distribution"
+              "Pitch accent languages only use intensity, never fundamental frequency.",
+              "Pitch accent languages specify at most one distinctive pitch location per word, whereas tone languages can specify a lexical tone on any syllable.",
+              "Tone languages do not have pitch differences across minimal pairs.",
+              "Pitch accent languages only operate at the phrase level, never the lexical level."
             ],
             answer: 1,
-            explanation: "Same segments, different pitch pattern, different meaning: a tonal minimal pair."
+            explanation: "Pitch accent restricts lexical pitch contrasts to a single accent location per word, whereas tone languages can assign lexical tones to any syllable."
           }
         ]
       },
       {
         id: "4-3",
-        title: "Autosegmental Phonology",
+        title: "Intonation Patterns and Tone Languages",
         content: `
-**Autosegmental phonology** puts features such as tone on their own tier, separate from the segmental tier. The two tiers are connected by **association lines**.
-
-* **Spreading:** a tone links to additional vowels.
-* **Floating tone:** a tone with no vowel of its own, which docks onto a neighbor.
-* **No-Crossing Constraint (NCC):** association lines on the same pair of tiers may not cross.
-* **Obligatory Contour Principle (OCP):** adjacent identical tones (H H) merge into one.
-
-This model explains why one tone can stretch over several syllables, or why several tones can pile onto one.
+* **Tone Languages:** Lexical pitch contours (level, rising, falling, dipping) attach directly to segments/morae to establish lexical identity (e.g., Sino-Tibetan, Niger-Congo).
+* **Intonation Languages:** Pitch contours span across entire phrases and utterances (Intonational Phrases) to mark pragmatics, clause boundaries, focus, and discourse function without altering lexical identity.
         `,
         examples: [
-          { label: "Mende tone patterns (textbook data)", detail: "H: kɔ́ 'war'\nL: kpà 'debt'\nHL: mbû 'owl'\nLH: mbǎ 'rice'\nLHL: mbâ 'companion'\nOnly five patterns occur, no matter the word length." },
-          { label: "Spreading", detail: "Mende 'felama' (junction) has one H tone spread across all three syllables: [félámá]." }
+          {
+            label: "Mandarin Chinese Lexical Tones",
+            detail: "• Tone 1 (High Level): mā [ma˥˥] 'mother'\n• Tone 2 (High Rising): má [ma˧˥] 'hemp'\n• Tone 3 (Low Dipping): mǎ [ma˨˩˦] 'horse'\n• Tone 4 (High Falling): mà [ma˥˩] 'scold'"
+          },
+          {
+            label: "English Nuclear Tone Intonation",
+            detail: "• Fall (H* L-L%): 'He bought a \\cat.' (Definite statement / Finality)\n• Rise (L* H-H%): 'He bought a /cat?' (Echo question / Uncertainty)"
+          }
         ],
         exercises: [
           {
-            question: "What does the No-Crossing Constraint prohibit?",
+            question: "In ToBI (Tones and Break Indices) transcription for intonation, what does an asterisk (*) denote (e.g., H*)?",
             options: [
-              "Two tones on one vowel",
-              "Association lines crossing between two tiers",
-              "A tone spreading to a second vowel",
-              "Adjacent identical tones"
+              "A boundary tone at the end of a sentence.",
+              "A pitch accent aligned with a rhythmically stressed syllable.",
+              "An ungrammatical intonation pattern.",
+              "A pause length of 500 milliseconds."
             ],
             answer: 1,
-            explanation: "The NCC says association lines linking the same two tiers may not cross. (Adjacent identical tones fall under the OCP.)"
+            explanation: "In ToBI notation, the asterisk marks the tone of a pitch accent that is aligned with a stressed (prominent) syllable."
+          }
+        ]
+      },
+      {
+        id: "4-4",
+        title: "Connected Speech Phenomena",
+        content: `
+In continuous spoken language, lexical items undergo transformations at word boundaries to optimize fluid articulation across phrase boundaries.
+
+* **Liaison:** Pronunciation of a latent word-final consonant before a vowel-initial word.
+* **Linking R:** Pronouncing a word-final orthographic 'r' in non-rhotic dialects when followed by a vowel.
+* **Intrusive R:** Inserting an unhistorical [ɹ] between two vocalic nuclei across a word boundary.
+        `,
+        examples: [
+          {
+            label: "French Liaison",
+            detail: "• In isolation: 'les' /lɛ/ ('the'), 'enfants' /ɑ̃.fɑ̃/ ('children')\n• In connected speech: 'les enfants' [lɛ.zɑ̃.fɑ̃] (latent /z/ surfaces as an onset)."
+          },
+          {
+            label: "Non-Rhotic English Linking vs. Intrusive R",
+            detail: "• Linking R: 'far away' /fɑː/ + /ə.ˈweɪ/ → [fɑː.ɹə.ˈweɪ] (spelled 'r' pronounced)\n• Intrusive R: 'idea of' /aɪ.ˈdɪə/ + /ɒv/ → [aɪ.ˈdɪə.ɹəv] (no 'r' in the spelling)"
+          }
+        ],
+        exercises: [
+          {
+            question: "A speaker of Received Pronunciation uttering 'law and order' as [ˈlɔː.ɹən.ˈɔː.də] demonstrates which connected speech phenomenon?",
+            options: ["Liaison", "Linking R", "Intrusive R", "Consonant Elision"],
+            answer: 2,
+            explanation: "Because there is no historical or orthographic 'r' in 'law', inserting [ɹ] to prevent hiatus before 'and' is Intrusive R."
+          }
+        ]
+      },
+      {
+        id: "4-5",
+        title: "Prosodic Hierarchy",
+        content: `
+Prosodic Phonology posits that phonological domains are organized into a strict structural hierarchy rather than directly mirroring syntactic constituency:
+
+$$\\text{Phonological Utterance } (U)$$
+$$\\downarrow$$
+$$\\text{Intonational Phrase } (I)$$
+$$\\downarrow$$
+$$\\text{Phonological Phrase } (P)$$
+$$\\downarrow$$
+$$\\text{Prosodic Word } (W / \\omega)$$
+$$\\downarrow$$
+$$\\text{Foot } (F)$$
+$$\\downarrow$$
+$$\\text{Syllable } (\\sigma)$$
+$$\\downarrow$$
+$$\\text{Mora } (\\mu)$$
+        `,
+        examples: [
+          {
+            label: "Metrical Foot Parsing (Trochaic vs. Iambic)",
+            detail: "• Trochee (Strong-Weak): 'apple' /ˈæ.pəl/ → (ˈσ σ)_F\n• Iamb (Weak-Strong): 'balloon' /bə.ˈluːn/ → (σ ˈσ)_F"
+          },
+          {
+            label: "Prosodic Word Size Constraints",
+            detail: "A Prosodic Word (ω) must contain at least one foot, which enforces minimal word size: English content words must be at least bimoraic (e.g., /siː/ 'sea'), while function words like /tə/ 'to' can be lighter because they cliticize to a neighbouring word."
+          }
+        ],
+        exercises: [
+          {
+            question: "According to the Strict Layer Hypothesis in Prosodic Hierarchy, which statement is TRUE?",
+            options: [
+              "A prosodic category of level X can directly contain elements of level X-2 without intermediate nodes.",
+              "A category at level X must be composed exclusively of structural units from category X-1 directly below it.",
+              "Syllables are higher in hierarchy than Prosodic Words.",
+              "Intonational phrases exist inside feet."
+            ],
+            answer: 1,
+            explanation: "The Strict Layer Hypothesis stipulates that every prosodic node at level X directly dominates one or more nodes at level X-1."
           }
         ]
       }
     ]
   },
 
-  /* ------------------------------ UNIT 5 ---------------------------------- */
+  /* -------------------------------------------------------------------------- */
+  /* UNIT 5: MAJOR THEORETICAL FRAMEWORKS                                       */
+  /* -------------------------------------------------------------------------- */
   {
     id: "unit-5",
-    title: "5. Optimality Theory",
+    title: "5. Major Theoretical Frameworks",
     lessons: [
       {
         id: "5-1",
-        title: "Constraints, GEN and EVAL",
+        title: "Classical / Structuralist Phonology",
         content: `
-Optimality Theory (OT) replaces ordered rules with **ranked, violable constraints**.
+Classical Structuralism (Bloomfield, Trubetzkoy, Harris, Bloch) focuses on surface distribution, physical phonemic contrasts, and inductive inventory cataloging.
 
-* **GEN** produces a set of candidate outputs for each input.
-* **CON** is the universal set of constraints.
-* **EVAL** picks the candidate that best satisfies the language's ranking of CON.
-
-Constraints come in two families:
-* **Markedness:** penalize outputs that are hard or unusual (for example, a ban on voiced obstruents in coda position).
-* **Faithfulness:** penalize differences between input and output: **MAX** (no deletion), **DEP** (no insertion), **IDENT(F)** (no feature change).
+Key principles include:
+* **Biuniqueness:** Every phone is assigned to exactly one phoneme, so a phonemic representation can be converted into a phonetic one, and back again, without any other information.
+* **Local Determinacy:** All phonemic decisions are made strictly on surface phonetic distribution without relying on higher-level morphological/syntactic information.
         `,
         examples: [
-          { label: "The three basic faithfulness constraints", detail: "MAX: every input segment has an output correspondent (punishes deletion)\nDEP: every output segment has an input correspondent (punishes insertion)\nIDENT(voice): corresponding segments agree in voicing" }
+          {
+            label: "Biuniqueness Failure in Flapping",
+            detail: "American English 'writer' [ˈɹaɪ.ɾɚ] and 'rider' [ˈɹaɪ.ɾɚ]. Structuralism struggles because [ɾ] must be assigned to a single phoneme, yet it corresponds to /t/ in 'writer' and /d/ in 'rider'."
+          }
         ],
         exercises: [
           {
-            question: "Which type of constraint is DEP?",
-            options: ["Markedness", "Faithfulness", "Alignment", "Sonority"],
-            answer: 1,
-            explanation: "DEP compares output to input and penalizes inserted material, so it is a faithfulness constraint."
+            question: "Why did Generative Phonologists reject the Structuralist principle of Biuniqueness?",
+            options: [
+              "Because it prevented analysts from capturing systematic generalizations like neutralization (e.g., German final devoicing /raːd/ → [raːt]).",
+              "Because structuralists ignored minimal pairs.",
+              "Because biuniqueness requires infinite constraints.",
+              "Because phones do not exist in spoken language."
+            ],
+            answer: 0,
+            explanation: "Biuniqueness forced structuralists to assign German [raːt] to /t/, obscuring its morphological alternation with [raːdəs] (genitive 'Rades'), where the underlying /d/ surfaces."
           }
         ]
       },
       {
         id: "5-2",
-        title: "Reading Tableaux",
+        title: "Generative Phonology (Standard Theory / SPE)",
         content: `
-A **tableau** lists candidates in rows and ranked constraints in columns, highest-ranked on the left. Each violation earns a mark. When a candidate loses to a rival at a constraint, its mark is **fatal** (marked with an exclamation point), and later cells are shaded because they no longer matter. The winner is shown with a pointing hand.
+Formulated by Noam Chomsky and Morris Halle in *The Sound Pattern of English* (1968).
 
-**Strict domination:** a higher-ranked constraint outweighs any number of violations of lower-ranked ones. Marks are compared, not added up.
-
-Open the OT tab and drag constraints left or right to see the winner change.
+* **Underlying Representation (UR):** Mental lexical entry composed of distinctive feature matrices.
+* **Surface Representation (SR):** Phonetic output produced after the serial application of ordered rewrite rules ($A \\rightarrow B / C \\_ D$).
         `,
         examples: [
-          { label: "Strict domination", detail: "Candidate A: one violation of the top constraint.\nCandidate B: three violations of the lowest constraint.\nB wins. One top-level mark is worse than any number of lower marks." }
+          {
+            label: "SPE Derivation for English Vowel Alternations (simplified)",
+            detail: "'divine' ~ 'divinity', with a tense underlying vowel /iː/:\n\nUR: /dɪˈviːn/ and /dɪˈviːn + ɪti/\n1. Trisyllabic Laxing (divinity only): iː → ɪ\n2. Vowel Shift and Diphthongization (divine): iː → aɪ\n3. Vowel Reduction: unstressed ɪ → ə\n\nSR: [dɪˈvaɪn] 'divine' and [dɪˈvɪnəti] 'divinity'"
+          }
         ],
         exercises: [
           {
-            question: "Candidate A violates the top-ranked constraint once. Candidate B violates only the lowest-ranked constraint, five times. Which wins?",
-            options: ["A", "B", "They tie", "Cannot be determined"],
-            answer: 1,
-            explanation: "Strict domination: the top-ranked constraint decides first, and B has no violation there."
+            question: "In SPE Generative Phonology, what role do distinctive features play?",
+            options: [
+              "They are atomic binary building blocks ([+feature] / [-feature]) that define natural classes and phonological rules.",
+              "They are optional acoustic markers used only for vowels.",
+              "They replace syllables entirely.",
+              "They represent pitch contours in tone languages."
+            ],
+            answer: 0,
+            explanation: "SPE feature matrices decompose segments into universal binary features to capture natural classes."
           }
         ]
       },
       {
         id: "5-3",
-        title: "Factorial Typology: Reranking as Language Variation",
+        title: "Autosegmental Phonology",
         content: `
-In OT, the constraints are universal and **languages differ only in ranking**. Reranking the same constraints predicts different languages.
-
-If markedness outranks faithfulness, the language repairs marked structures (German devoices final obstruents). If faithfulness outranks markedness, it tolerates them (English keeps final voiced obstruents).
+Introduced by John Goldsmith (1976) to resolve issues where linear SPE models failed to handle multi-segment phenomena (tone spreading, nasal harmony, vowel harmony). Features reside on independent, parallel **autosegmental tiers** linked to timing slots ($X$-slots/Morae) via association lines governed by the Well-Formedness Condition (WFC).
         `,
         examples: [
-          { label: "German vs. English coda voicing", detail: "German: *VoicedCoda >> IDENT(voice) → /raːd/ surfaces as [raːt]\nEnglish: IDENT(voice) >> *VoicedCoda → /bæd/ surfaces as [bæd]" },
-          { label: "Spanish vs. English /sC/ onsets", detail: "Spanish: *#sC >> DEP → /skuːl/ becomes [eskuːl]\nEnglish: DEP >> *#sC → /skuːl/ stays [skuːl]" }
+          {
+            label: "Tone Melodies in Mende",
+            detail: "Mende words carry one of a few tone melodies (H, L, HL, LH, LHL) that associate left to right with the syllables, regardless of word length:\n• H: kɔ́ 'war', pɛ́lɛ́ 'house'\n• HL: mbû 'owl', ngílà 'dog'\n• LH: mbǎ 'rice', fàndé 'cotton'\nWhen there are more tones than syllables, the extra tone docks on the last syllable and forms a contour (mbû). When there are more syllables than tones, the last tone spreads."
+          },
+          {
+            label: "Feature Geometry Node Hierarchy",
+            detail: "Extending the autosegmental idea (Clements 1985; Sagey 1986): Root Node → Laryngeal Node ([±voice]) & Place Node (Labial, Coronal, Dorsal)."
+          }
         ],
         exercises: [
           {
-            question: "Which ranking produces German-style final devoicing?",
+            question: "What is a primary rule of the Association Conventions in Autosegmental Phonology?",
             options: [
-              "IDENT(voice) >> *VoicedCoda",
-              "*VoicedCoda >> IDENT(voice)",
-              "DEP >> MAX",
-              "MAX >> DEP"
+              "Association lines may cross freely between tiers.",
+              "Association lines must never cross.",
+              "Tones must always be deleted if a vowel is deleted.",
+              "Features can only associate with voiceless consonants."
             ],
             answer: 1,
-            explanation: "Only when the markedness constraint outranks IDENT(voice) is a voice change worth making."
+            explanation: "The No-Crossing Constraint forbids association lines linking two tiers from crossing one another."
+          }
+        ]
+      },
+      {
+        id: "5-4",
+        title: "Metrical Phonology",
+        content: `
+Formulated by Liberman & Prince (1977) to model stress hierarchically rather than via linear scalar features ([1stress], [2stress]). Relative prominence is represented using **Metrical Trees** (labelled with Strong/Weak nodes) and **Metrical Grids**.
+        `,
+        examples: [
+          {
+            label: "Iambic Reversal / Rhythm Rule in English",
+            detail: "• 'thirteen' in isolation: /θɜː.ˈtiːn/ (Weak - Strong)\n• Before a noun: 'thirteen men' → [ˈθɜː.tiːn ˈmɛn] (Strong - Weak)\n(Stress shifts leftward to prevent adjacent metrical grid beat clashes)."
+          }
+        ],
+        exercises: [
+          {
+            question: "What problem in SPE did Metrical Phonology solve regarding stress?",
+            options: [
+              "It eliminated the need for vowels.",
+              "It replaced infinite scalar stress feature numbers with relative, relational Strong/Weak binary structures.",
+              "It proved that stress does not exist.",
+              "It merged stress with nasalization."
+            ],
+            answer: 1,
+            explanation: "SPE treated stress as an n-ary feature ([1stress], [2stress], [3stress]), whereas Metrical Phonology showed stress is relational (S/W) and structural."
+          }
+        ]
+      },
+      {
+        id: "5-5",
+        title: "Lexical Phonology",
+        content: `
+Developed by Kiparsky and Mohanan. Integrates morphology and phonology into ordered strata/levels inside the Lexicon, separating lexical operations from post-lexical ones.
+
+| Property | Lexical Level | Post-Lexical Level |
+| :--- | :--- | :--- |
+| **Domain** | Inside the Lexicon (words) | Syntactic phrases (across words) |
+| **Exceptions** | Can have lexical exceptions | Exceptionless, automatic |
+| **Structure Preservation** | Obeyed (no non-phonemic phones) | Can produce allophones/phones |
+| **Rule Application** | Cyclical with morphology | Non-cyclical |
+        `,
+        examples: [
+          {
+            label: "Lexical vs. Post-Lexical Rule Contrast in English",
+            detail: "• Lexical (Stratum 1): Trisyllabic Laxing in 'sane' /seɪn/ → 'sanity' /ˈsæn.ɪ.ti/ (has exceptions: 'obesity').\n• Post-Lexical: Flapping /t/ → [ɾ] in 'hit it' [hɪɾɪt] (exceptionless, across word boundaries)."
+          }
+        ],
+        exercises: [
+          {
+            question: "Which feature is characteristic of Lexical Rules, but NOT Post-Lexical Rules?",
+            options: [
+              "They are exceptionless.",
+              "They can create new, non-phonemic surface allophones.",
+              "They obey Structure Preservation and can have lexical exceptions.",
+              "They apply across sentence syntactic boundaries."
+            ],
+            answer: 2,
+            explanation: "Lexical rules operate inside the lexicon before syntax, obeying Structure Preservation (only using underlying phonemes) and admitting lexical exceptions."
+          }
+        ]
+      },
+      {
+        id: "5-6",
+        title: "Optimality Theory (Constraints, Ranking, EVAL, and GEN)",
+        content: `
+Pioneered by Alan Prince and Paul Smolensky (circulated in 1993, published in 2004). Replaces procedural rule derivations ($A \\rightarrow B$) with a parallel, constraint-based selection system:
+
+1. **GEN (Generator):** Takes an input (UR) and generates an infinite candidate set $\\{c_1, c_2, \\dots\\}$.
+2. **CON (Constraints):** Universal set of violable constraints divided into **Markedness** (demands structural simplicity) and **Faithfulness** (demands surface outputs match inputs).
+3. **EVAL (Evaluator):** Uses a strictly ranked, language-specific hierarchy to filter candidates. The winner (☞) is the candidate that does best on the highest-ranked constraint that distinguishes among the remaining candidates.
+
+Re-rank the constraints yourself in the OT tab.
+        `,
+        examples: [
+          {
+            label: "Optimality Theory Tableau: Final Devoicing in German",
+            detail: `
+Input: /raːd/ ('wheel')
+
+| Candidates | NO-VOICED-CODA | IDENT-IO(Voice) |
+| :--- | :---: | :---: |
+| ☞ a. [raːt] | | * |
+|    b. [raːd] | *! | |
+
+• Candidate (a) wins because NO-VOICED-CODA ranks higher than IDENT-IO(Voice).
+            `
+          }
+        ],
+        exercises: [
+          {
+            question: "In Optimality Theory, what happens when a candidate violates a lower-ranked constraint in order to satisfy a higher-ranked constraint?",
+            options: [
+              "The candidate is automatically eliminated.",
+              "The candidate can still surface as optimal if every competitor does worse on a higher-ranked constraint.",
+              "The grammar crashes.",
+              "The violation is converted into a rewrite rule."
+            ],
+            answer: 1,
+            explanation: "OT constraints are violable. Violating a lower-ranked constraint is routine for winning candidates."
           }
         ]
       }
@@ -825,60 +1110,161 @@ const surface = (tokens) => tokens.filter((t) => !isBoundary(t)).join("");
 /* ========================================================================== */
 /* MARKDOWN-LITE RENDERER                                                     */
 /* ========================================================================== */
-const texToText = (s) =>
-  s.replace(/\\text\{([^}]*)\}/g, "$1")
+const SUB = { 0: "₀", 1: "₁", 2: "₂", 3: "₃", 4: "₄", 5: "₅", 6: "₆", 7: "₇", 8: "₈", 9: "₉" };
+
+function texify(s) {
+  return s
+    .replace(/\\text\{([^}]*)\}/g, "$1")
     .replace(/\\underline\{\\quad\}/g, "＿＿")
-    .replace(/\\rightarrow/g, "→").replace(/\\Rightarrow/g, "⇒")
-    .replace(/\\sigma/g, "σ").replace(/\\mu/g, "μ")
-    .replace(/\\quad/g, " ").replace(/\\ /g, " ").replace(/\\\\/g, "")
-    .replace(/\s+/g, " ").trim();
+    .replace(/\\rightarrow/g, "→")
+    .replace(/\\leftarrow/g, "←")
+    .replace(/\\downarrow/g, "↓")
+    .replace(/\\sigma/g, "σ")
+    .replace(/\\omega/g, "ω")
+    .replace(/\\mu/g, "μ")
+    .replace(/\\dots/g, "…")
+    .replace(/\\quad/g, " ")
+    .replace(/\\\{/g, "{")
+    .replace(/\\\}/g, "}")
+    .replace(/\\_/g, "_")
+    .replace(/\\ /g, " ")
+    .replace(/_(\d)/g, (_, d) => SUB[d])
+    .replace(/ {2,}/g, " ")
+    .trim();
+}
 
 function Inline({ text }) {
-  const parts = text.split(/(\*\*[^*]+\*\*|\$[^$]+\$|\*[^*\s][^*]*\*)/g).filter(Boolean);
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*\s][^*]*\*|\$[^$]+\$)/g);
   return (
     <>
       {parts.map((p, i) => {
-        if (p.startsWith("**")) return <strong key={i} style={{ color: T.text }}>{p.slice(2, -2)}</strong>;
-        if (p.startsWith("$")) return <span key={i} style={{ fontFamily: mathFont, fontStyle: "italic", color: T.cyan }}>{texToText(p.slice(1, -1))}</span>;
-        if (p.startsWith("*")) return <em key={i}>{p.slice(1, -1)}</em>;
+        if (!p) return null;
+        if (p.length > 4 && p.startsWith("**") && p.endsWith("**"))
+          return <strong key={i} style={{ color: T.text }}><Inline text={p.slice(2, -2)} /></strong>;
+        if (p.length > 2 && p.startsWith("$") && p.endsWith("$"))
+          return <span key={i} style={{ fontFamily: mathFont, fontStyle: "italic", color: T.cyan }}>{texify(p.slice(1, -1))}</span>;
+        if (p.length > 2 && p.startsWith("*") && p.endsWith("*"))
+          return <em key={i}>{p.slice(1, -1)}</em>;
         return <React.Fragment key={i}>{p}</React.Fragment>;
       })}
     </>
   );
 }
 
+const isList = (l) => /^\s*([*-]|\d+\.)\s+/.test(l);
+const isTable = (l) => l.trim().startsWith("|");
+const isQuote = (l) => /^\s*>/.test(l);
+const isDisplay = (l) => l.trim().length > 4 && l.trim().startsWith("$$") && l.trim().endsWith("$$");
+
+function Rich({ text }) {
+  const lines = text.replace(/\r/g, "").split("\n");
+  const out = [];
+  let i = 0;
+  let k = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    if (!line.trim()) { i++; continue; }
+
+    if (isDisplay(line)) {
+      out.push(
+        <div key={k++} className="text-center my-2 px-3 py-1.5 rounded-lg overflow-x-auto"
+          style={{ background: T.panel2, fontFamily: mathFont, fontStyle: "italic", color: T.cyan, fontSize: 16 }}>
+          {texify(line.trim().slice(2, -2))}
+        </div>
+      );
+      i++;
+      continue;
+    }
+
+    if (isTable(line)) {
+      const rows = [];
+      while (i < lines.length && isTable(lines[i])) {
+        if (!/^\|[\s:|-]+\|?\s*$/.test(lines[i].trim())) {
+          rows.push(lines[i].trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim()));
+        }
+        i++;
+      }
+      out.push(
+        <div key={k++} className="overflow-x-auto my-3">
+          <table className="text-sm" style={{ borderCollapse: "collapse", fontFamily: ipaFont }}>
+            <thead>
+              <tr>
+                {rows[0].map((c, j) => (
+                  <th key={j} className="text-left px-3 py-2" style={{ border: `1px solid ${T.line}`, background: T.panel2, color: T.text }}>
+                    <Inline text={c} />
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.slice(1).map((r, ri) => (
+                <tr key={ri}>
+                  {r.map((c, j) => (
+                    <td key={j} className="px-3 py-2" style={{ border: `1px solid ${T.line}` }}>
+                      <Inline text={c} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      continue;
+    }
+
+    if (isQuote(line)) {
+      const buf = [];
+      while (i < lines.length && isQuote(lines[i])) {
+        buf.push(lines[i].replace(/^\s*>\s?/, ""));
+        i++;
+      }
+      out.push(
+        <blockquote key={k++} className="my-3 pl-4" style={{ borderLeft: `4px solid ${T.cyan}`, color: T.mute }}>
+          <Inline text={buf.join(" ")} />
+        </blockquote>
+      );
+      continue;
+    }
+
+    if (isList(line)) {
+      const items = [];
+      while (i < lines.length && isList(lines[i])) {
+        const m = lines[i].match(/^(\s*)([*-]|\d+\.)\s+(.*)$/);
+        items.push({ indent: m[1].length, marker: /\d/.test(m[2]) ? m[2] : "•", body: m[3] });
+        i++;
+      }
+      out.push(
+        <div key={k++} className="my-2 space-y-1">
+          {items.map((it, j) => (
+            <div key={j} className="flex gap-2" style={{ paddingLeft: it.indent >= 2 ? 22 : 0 }}>
+              <span style={{ color: T.cyan }} className="shrink-0 w-4 text-right">{it.indent >= 2 ? "–" : it.marker}</span>
+              <span><Inline text={it.body} /></span>
+            </div>
+          ))}
+        </div>
+      );
+      continue;
+    }
+
+    const buf = [];
+    while (
+      i < lines.length &&
+      lines[i].trim() &&
+      !isList(lines[i]) && !isTable(lines[i]) && !isQuote(lines[i]) && !isDisplay(lines[i])
+    ) {
+      buf.push(lines[i].trim());
+      i++;
+    }
+    out.push(<p key={k++} className="my-3"><Inline text={buf.join(" ")} /></p>);
+  }
+  return <>{out}</>;
+}
+
 function Md({ text }) {
-  const blocks = [];
-  let para = [];
-  const flush = () => { if (para.length) { blocks.push({ t: "p", v: para.join(" ") }); para = []; } };
-  text.trim().split("\n").forEach((l) => {
-    if (!l.trim()) { flush(); return; }
-    const li = l.match(/^(\s*)\* (.*)$/);
-    if (li) { flush(); blocks.push({ t: "li", lvl: li[1].length >= 2 ? 1 : 0, v: li[2] }); return; }
-    const d = l.trim().match(/^\$\$(.*)\$\$$/);
-    if (d) { flush(); blocks.push({ t: "math", v: d[1] }); return; }
-    para.push(l.trim());
-  });
-  flush();
   return (
-    <div className="space-y-3" style={{ color: "#CBD5E1", lineHeight: 1.65, fontSize: 15 }}>
-      {blocks.map((b, i) => {
-        if (b.t === "math")
-          return (
-            <div key={i} className="text-center py-2 px-3 rounded-lg overflow-x-auto"
-              style={{ background: T.panel2, fontFamily: mathFont, fontStyle: "italic", color: T.cyan, fontSize: 17 }}>
-              {texToText(b.v)}
-            </div>
-          );
-        if (b.t === "li")
-          return (
-            <div key={i} className="flex gap-2" style={{ paddingLeft: b.lvl * 18, marginTop: 6 }}>
-              <span style={{ color: T.cyan }}>•</span>
-              <div><Inline text={b.v} /></div>
-            </div>
-          );
-        return <p key={i}><Inline text={b.v} /></p>;
-      })}
+    <div style={{ color: "#CBD5E1", lineHeight: 1.65, fontSize: 15 }}>
+      <Rich text={text} />
     </div>
   );
 }
@@ -997,7 +1383,11 @@ function Learn({ answers, setAnswers }) {
           {l.examples.map((e, i) => (
             <Card key={i} style={{ padding: 14 }}>
               <div className="font-semibold mb-1" style={{ color: T.cyan, fontSize: 14 }}>{e.label}</div>
-              <div className="whitespace-pre-line" style={{ ...ipa, color: "#CBD5E1", fontSize: 14, lineHeight: 1.6 }}>{e.detail}</div>
+              {e.detail.includes("|") ? (
+                <div style={{ fontSize: 14 }}><Md text={e.detail} /></div>
+              ) : (
+                <div className="whitespace-pre-line" style={{ ...ipa, color: "#CBD5E1", fontSize: 14, lineHeight: 1.6 }}>{e.detail}</div>
+              )}
             </Card>
           ))}
         </div>
